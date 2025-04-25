@@ -1,1 +1,1 @@
-# Sauce-Memo-Inventory-POM
+# Sauce Demo InventoryPOM
