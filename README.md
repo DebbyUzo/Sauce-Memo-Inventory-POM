@@ -1,1 +1,1 @@
-# Page Object Modeling Inventory
+# Page Object Model Inventory
