@@ -1,1 +1,1 @@
-# Sauce Demo InventoryPOM
+# Page Object Modeling Inventory
