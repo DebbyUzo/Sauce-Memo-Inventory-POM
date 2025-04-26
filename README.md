@@ -1,1 +1,1 @@
-# Page Object Model Inventory
+# PageObjectModelInventory
