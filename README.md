@@ -1,1 +1,1 @@
-# PageObjectModelInventory
+SauceDemoInventory-POM_
