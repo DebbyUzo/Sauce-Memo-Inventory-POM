@@ -59,3 +59,45 @@ class Action_Page:
             EC.presence_of_element_located(LoginLocator.SAUCELABSBOLTTSHIRT))
         click_test_allthingstshirt.click()
         time.sleep(5)
+
+    def click_shoppingcartbadge(self):
+        click_shoppingcartbadge = WebDriverWait(self.driver, 20).until(
+            EC.presence_of_element_located(LoginLocator.SHOPPINGCARTBADGE))
+        click_shoppingcartbadge.click()
+        time.sleep(5)
+
+    def click_checkout(self):
+        click_checkout = WebDriverWait(self.driver, 20).until(
+            EC.presence_of_element_located(LoginLocator.CHECKOUT))
+        click_checkout.click()
+        time.sleep(5)
+
+    def enter_firstname(self, Debbie):
+        enter_firstname = WebDriverWait(self.driver, 20).until(
+            EC.presence_of_element_located(LoginLocator.FIRSTNAME))
+        enter_firstname.send_keys(Debbie)
+        time.sleep(5)
+
+    def enter_lastname(self, Ego):
+        enter_lastname = WebDriverWait(self.driver, 20).until(
+            EC.presence_of_element_located(LoginLocator.LASTNAME))
+        enter_lastname.send_keys(Ego)
+        time.sleep(5)
+
+    def enter_postalcode(self,):
+        enter_postalcode = WebDriverWait(self.driver, 20).until(
+            EC.presence_of_element_located(LoginLocator.POSTALCODE))
+        enter_postalcode.send_keys()
+        time.sleep(5)
+
+    def click_continue(self):
+        click_continue = WebDriverWait(self.driver, 20).until(
+            EC.presence_of_element_located(LoginLocator.CONTINUE))
+        click_continue.click()
+        time.sleep(5)
+
+    def click_finish(self):
+        click_finish = WebDriverWait(self.driver, 20).until(
+            EC.presence_of_element_located(LoginLocator.FINISH))
+        click_finish.click()
+        time.sleep(5)

@@ -12,3 +12,16 @@ class AddToCartLocator:
     SAUCELABSFLEECEJACKET = (By.ID, "add-to-cart-sauce-labs-fleece-jacket")
     SAUCELABSONESIE = (By.ID, "add-to-cart-sauce-labs-onesie")
     TESTALLTHETHINGSTSHIRTRED = (By.ID, "add-to-cart-test.allthethings()-t-shirt-(red)")
+
+class Checkout:
+    SHOPPINGCARTBADGE = (By.CLASS_NAME, "shopping_cart_badge")
+    CHECKOUT = (By.ID, "checkout")
+    FIRSTNAME = (By.ID, "first-name")
+    LASTNAME = (By.ID, "last-name")
+    POSTALCODE = (By.ID, "postal-code")
+    CONTINUE = (By.ID, "continue")
+    FINISH = (By.ID, "finish")
+
+
+
+

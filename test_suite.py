@@ -27,3 +27,12 @@ def test_login_page_on_automation_customer_service_website(login):
     login.click_saucelabsbolttshirt()
     login.click_saucelabsonesie()
     login.click_test_allthethingstshirt()
+
+def test_checkout_page_on_automation_your_information_website(checkout):
+    checkout.click_shoppingcartbadge()
+    checkout.enter_firstname("Debbie")
+    checkout.enter_lastname("Ego")
+    checkout.enter_POSTALCODE()
+    checkout.click_continue()
+    checkout.click_finish()
+
