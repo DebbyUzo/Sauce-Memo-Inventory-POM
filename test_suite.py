@@ -1,7 +1,9 @@
 import pytest
 from selenium import webdriver
 
-from ActionPage.Action import Action_Page
+from ActionPage.Action import Action_Page, addToCartPage
+from Locators.locators_page import CheckoutLocator
+
 
 @pytest.fixture(scope="session")
 def driver_setup():
@@ -22,17 +24,21 @@ def test_login_page_on_automation_customer_service_website(login):
     login.enter_username("standard_user")
     login.enter_password("secret_sauce")
     login.click_submit_button()
-    login.click_saucelabsbackpeak()
-    login.click_saucelabsbikelight()
-    login.click_saucelabsbolttshirt()
-    login.click_saucelabsonesie()
-    login.click_test_allthethingstshirt()
 
-def test_checkout_page_on_automation_your_information_website(checkout):
-    checkout.click_shoppingcartbadge()
-    checkout.enter_firstname("Debbie")
-    checkout.enter_lastname("Ego")
-    checkout.enter_POSTALCODE()
-    checkout.click_continue()
-    checkout.click_finish()
+def test_add_to_cart_page(login):
+    add_to_cart = addToCartPage(login.driver)
+    add_to_cart.click_saucelabsbackpeak()
+    add_to_cart.click_saucelabsbikelight()
+    add_to_cart.click_saucelabsbolttshirt()
+    add_to_cart.click_saucelabsfleecejacket()
+    add_to_cart.click_saucelabsonesie()
+    add_to_cart.click_testallthethingstshirtred()
+
+def test_check_out_locator_page(login):
+    CheckoutLocator.SHOPPINGCARTBADGE()
+    CheckoutLocator.FIRSTNAME("Debbie")
+    CheckoutLocator.LASTNAME("Ego")
+    CheckoutLocator.POSTALCODE()
+    CheckoutLocator.CONTINUE()
+    CheckoutLocator.FINISH()
 

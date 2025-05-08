@@ -3,7 +3,8 @@ import time
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
-from Locators.locators_page import LoginLocator
+from Locators.locators_page import LoginLocator, AddToCartLocator, CheckoutLocator
+
 
 class Action_Page:
     def __init__(self, driver):
@@ -30,74 +31,82 @@ class Action_Page:
         click_submit_button.click()
         time.sleep(5)
 
+class addToCartPage:
+    def __init__(self, driver):
+        self.driver = driver
+
     def click_saucelabsbackpeak(self):
         click_saucelabsbackpeak = WebDriverWait(self.driver, 20).until(
-            EC.presence_of_element_located(LoginLocator.SAUCELABSBACKPEAK))
+            EC.presence_of_element_located(AddToCartLocator.SAUCELABSBACKPEAK))
         click_saucelabsbackpeak.click()
         time.sleep(5)
 
     def click_saucelabsbikelight(self):
         click_saucelabsbikelight = WebDriverWait(self.driver, 20).until(
-            EC.presence_of_element_located(LoginLocator.SAUCELABSBIKELIGHT))
+            EC.presence_of_element_located(AddToCartLocator.SAUCELABSBIKELIGHT))
         click_saucelabsbikelight.click()
         time.sleep(5)
 
     def click_saucelabsbolttshirt(self):
         click_saucelabsbolttshirt = WebDriverWait(self.driver, 20).until(
-            EC.presence_of_element_located(LoginLocator.SAUCELABSBOLTTSHIRT))
+            EC.presence_of_element_located(AddToCartLocator.SAUCELABSBOLTTSHIRT))
         click_saucelabsbolttshirt.click()
+        time.sleep(5)
+
+    def click_saucelabsfleecejacket(self):
+        click_saucelabsfleecejacket = WebDriverWait(self.driver, 20).until(
+            EC.presence_of_element_located(AddToCartLocator.SAUCELABSFLEECEJACKET))
+        click_saucelabsfleecejacket.click()
         time.sleep(5)
 
     def click_saucelabsonesie(self):
         click_saucelabsonesie = WebDriverWait(self.driver, 20).until(
-            EC.presence_of_element_located(LoginLocator.SAUCELABSONESIE))
+            EC.presence_of_element_located(AddToCartLocator.SAUCELABSONESIE))
         click_saucelabsonesie.click()
         time.sleep(5)
 
-    def click_test_allthethingstshirt(self):
-        click_test_allthingstshirt = WebDriverWait(self.driver, 20).until(
-            EC.presence_of_element_located(LoginLocator.SAUCELABSBOLTTSHIRT))
-        click_test_allthingstshirt.click()
+    def click_testallthethingstshirtred(self):
+        click_testallthethingstshirtred = WebDriverWait(self.driver, 20).until(
+            EC.presence_of_element_located(AddToCartLocator.TESTALLTHETHINGSTSHIRTRED))
+        click_testallthethingstshirtred.click()
         time.sleep(5)
 
-    def click_shoppingcartbadge(self):
-        click_shoppingcartbadge = WebDriverWait(self.driver, 20).until(
-            EC.presence_of_element_located(LoginLocator.SHOPPINGCARTBADGE))
-        click_shoppingcartbadge.click()
-        time.sleep(5)
+class checkout:
+    def __init__(self, driver):
+        self.driver = driver
 
     def click_checkout(self):
         click_checkout = WebDriverWait(self.driver, 20).until(
-            EC.presence_of_element_located(LoginLocator.CHECKOUT))
+            EC.presence_of_element_located(cCheckoutLocator.CHECKOUT))
         click_checkout.click()
         time.sleep(5)
 
     def enter_firstname(self, Debbie):
         enter_firstname = WebDriverWait(self.driver, 20).until(
-            EC.presence_of_element_located(LoginLocator.FIRSTNAME))
+            EC.presence_of_element_located(CheckoutLocator.FIRSTNAME))
         enter_firstname.send_keys(Debbie)
         time.sleep(5)
 
     def enter_lastname(self, Ego):
         enter_lastname = WebDriverWait(self.driver, 20).until(
-            EC.presence_of_element_located(LoginLocator.LASTNAME))
+            EC.presence_of_element_located(CheckoutLocator.LASTNAME))
         enter_lastname.send_keys(Ego)
         time.sleep(5)
 
     def enter_postalcode(self,):
         enter_postalcode = WebDriverWait(self.driver, 20).until(
-            EC.presence_of_element_located(LoginLocator.POSTALCODE))
+            EC.presence_of_element_located(CheckoutLocator.POSTALCODE))
         enter_postalcode.send_keys()
         time.sleep(5)
 
     def click_continue(self):
         click_continue = WebDriverWait(self.driver, 20).until(
-            EC.presence_of_element_located(LoginLocator.CONTINUE))
+            EC.presence_of_element_located(CheckoutLocator.CONTINUE))
         click_continue.click()
         time.sleep(5)
 
     def click_finish(self):
         click_finish = WebDriverWait(self.driver, 20).until(
-            EC.presence_of_element_located(LoginLocator.FINISH))
+            EC.presence_of_element_located(CheckoutLocator.FINISH))
         click_finish.click()
         time.sleep(5)

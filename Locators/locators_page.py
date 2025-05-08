@@ -13,7 +13,7 @@ class AddToCartLocator:
     SAUCELABSONESIE = (By.ID, "add-to-cart-sauce-labs-onesie")
     TESTALLTHETHINGSTSHIRTRED = (By.ID, "add-to-cart-test.allthethings()-t-shirt-(red)")
 
-class Checkout:
+class CheckoutLocator:
     SHOPPINGCARTBADGE = (By.CLASS_NAME, "shopping_cart_badge")
     CHECKOUT = (By.ID, "checkout")
     FIRSTNAME = (By.ID, "first-name")
