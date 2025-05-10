@@ -1,9 +1,8 @@
 import pytest
 from selenium import webdriver
 
-from ActionPage.Action import Action_Page, addToCartPage
+from ActionPage.Action import Action_Page, addToCartPage, checkout
 from Locators.locators_page import CheckoutLocator
-
 
 @pytest.fixture(scope="session")
 def driver_setup():
@@ -35,10 +34,11 @@ def test_add_to_cart_page(login):
     add_to_cart.click_testallthethingstshirtred()
 
 def test_check_out_locator_page(login):
-    CheckoutLocator.SHOPPINGCARTBADGE()
-    CheckoutLocator.FIRSTNAME("Debbie")
-    CheckoutLocator.LASTNAME("Ego")
-    CheckoutLocator.POSTALCODE()
-    CheckoutLocator.CONTINUE()
-    CheckoutLocator.FINISH()
-
+    check_out = checkout(login.driver)
+    check_out.click_shoppingCartBadge()
+    check_out.click_checkout()
+    check_out.enter_firstname("Debbie")
+    check_out.enter_lastname("Ego")
+    check_out.enter_postalcode("postal_code")
+    check_out.click_continue()
+    check_out.click_finish()

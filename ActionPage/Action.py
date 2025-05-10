@@ -75,9 +75,15 @@ class checkout:
     def __init__(self, driver):
         self.driver = driver
 
+    def click_shoppingCartBadge(self):
+        click_shoppingCartBadge = WebDriverWait(self.driver, 20).until(
+            EC.presence_of_element_located(CheckoutLocator.SHOPPINGCARTBADGE))
+        click_shoppingCartBadge.click()
+        time.sleep(5)
+
     def click_checkout(self):
         click_checkout = WebDriverWait(self.driver, 20).until(
-            EC.presence_of_element_located(cCheckoutLocator.CHECKOUT))
+            EC.presence_of_element_located(CheckoutLocator.CHECKOUT))
         click_checkout.click()
         time.sleep(5)
 
@@ -93,10 +99,10 @@ class checkout:
         enter_lastname.send_keys(Ego)
         time.sleep(5)
 
-    def enter_postalcode(self,):
+    def enter_postalcode(self, postal_code):
         enter_postalcode = WebDriverWait(self.driver, 20).until(
             EC.presence_of_element_located(CheckoutLocator.POSTALCODE))
-        enter_postalcode.send_keys()
+        enter_postalcode.send_keys(postal_code)
         time.sleep(5)
 
     def click_continue(self):
